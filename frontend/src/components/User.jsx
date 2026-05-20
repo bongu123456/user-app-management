@@ -1,13 +1,10 @@
 import { useLocation } from "react-router"
-import { useContext } from "react"
-import { UserContext } from "../contexts/UserContext"
 
 function User() {
 
   let {state}=useLocation();
-  const { currentUser } = useContext(UserContext);
 
-  const displayUser = state || currentUser;
+  const displayUser = state;
 
   if (!displayUser) {
     return (
