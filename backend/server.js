@@ -13,7 +13,7 @@ const app = exp();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-app-name.vercel.app"
+    "https://user-management-app-hjy4.vercel.app"
   ]
 }));
 
