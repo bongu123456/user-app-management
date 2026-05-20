@@ -26,14 +26,14 @@ app.use("/user-api", UserApp);
 // serve React build
 app.use(exp.static("dist"));
 
-app.get( (req, res) => {
+app.get("*splat", (req, res) => {
   res.sendFile(path.resolve("dist", "index.html"));
 });
 
 // connect DB
 async function connectDB() {
   try {
-    await connect(process.env.MONGO_URI);
+    await connect(process.env.MONGO_URI || process.env.DB_URL);
     console.log("Connected to DB");
 
     const port = process.env.PORT || 4000;
